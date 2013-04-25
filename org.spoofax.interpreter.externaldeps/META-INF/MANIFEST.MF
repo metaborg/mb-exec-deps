@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.spoofax.interpreter.externaldeps
 Bundle-SymbolicName: org.spoofax.interpreter.externaldeps
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: lib/guava.jar,
  lib/junit-benchmarks-0.6.0/junit-benchmarks-0.6.0.jar
 Export-Package: com.carrotsearch.junitbenchmarks,
