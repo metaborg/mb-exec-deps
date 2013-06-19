@@ -23,3 +23,5 @@ Export-Package: com.carrotsearch.junitbenchmarks,
  com.google.common.primitives,
  com.google.common.reflect,
  com.google.common.util.concurrent
+Require-Bundle: org.strategoxt.imp.runtime
+Eclipse-RegisterBuddy: org.strategoxt.imp.runtime
