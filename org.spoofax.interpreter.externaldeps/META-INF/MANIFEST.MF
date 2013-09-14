@@ -4,6 +4,7 @@ Bundle-Name: org.spoofax.interpreter.externaldeps
 Bundle-SymbolicName: org.spoofax.interpreter.externaldeps
 Bundle-Version: 1.2.0.qualifier
 Bundle-ClassPath: lib/guava.jar,
+ lib/functionaljava.jar,
  lib/junit-benchmarks-0.6.0/junit-benchmarks-0.6.0.jar
 Export-Package: com.carrotsearch.junitbenchmarks,
  com.carrotsearch.junitbenchmarks.annotation,
@@ -22,5 +23,16 @@ Export-Package: com.carrotsearch.junitbenchmarks,
  com.google.common.net,
  com.google.common.primitives,
  com.google.common.reflect,
- com.google.common.util.concurrent
+ com.google.common.util.concurrent,
+ fj,
+ fj.control.db,
+ fj.control.parallel,
+ fj.data,
+ fj.data.fingertrees,
+ fj.data.hlist,
+ fj.data.vector,
+ fj.function,
+ fj.parser,
+ fj.test,
+ fj.test.reflect
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

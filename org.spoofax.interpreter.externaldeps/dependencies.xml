@@ -3,11 +3,17 @@
 
 	<target name="download" description="Download external dependencies">
 		<mkdir dir="${lib.dir}" />
+		
+		<!-- Guava -->
 		<get src="http://search.maven.org/remotecontent?filepath=com/google/guava/guava/14.0.1/guava-14.0.1.jar" dest="${lib.dir}/guava.jar" skipexisting="true" />
 		<get src="http://search.maven.org/remotecontent?filepath=com/google/guava/guava/14.0.1/guava-14.0.1-javadoc.jar" dest="${lib.dir}/guava-javadoc.jar" skipexisting="true" />
 		<get src="http://search.maven.org/remotecontent?filepath=com/google/guava/guava/14.0.1/guava-14.0.1-sources.jar" dest="${lib.dir}/guava-sources.jar" skipexisting="true" />
 		
+		<!-- -->
 		<get src="http://labs.carrotsearch.com/download/junit-benchmarks/0.6.0/junit-benchmarks-0.6.0.zip" dest="${lib.dir}/junit-benchmarks.zip" skipexisting="true" />
 		<unzip src="${lib.dir}/junit-benchmarks.zip" dest="${lib.dir}"/>
+		
+		<!-- Functional Java -->
+		<get src="http://functionaljava.googlecode.com/svn/artifacts/3.0/functionaljava.jar" dest="${lib.dir}/functionaljava.jar" skipexisting="true" />
 	</target>
 </project>
