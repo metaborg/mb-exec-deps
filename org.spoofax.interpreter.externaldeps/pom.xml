@@ -2,37 +2,90 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.metaborg</groupId>
 	<artifactId>org.spoofax.interpreter.externaldeps</artifactId>
 	<version>1.2.0-SNAPSHOT</version>
-	<packaging>eclipse-plugin</packaging>
+	<packaging>bundle</packaging>
 
-	<parent>
-		<groupId>org.metaborg</groupId>
-		<artifactId>org.metaborg.maven.java.parent</artifactId>
-		<version>1.2.0-SNAPSHOT</version>
-		<relativePath>../../spoofax-deploy/org.metaborg.maven.java.parent</relativePath>
-	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<manifest-location>META-INF</manifest-location>
+		<forceContextQualifier>qualifier</forceContextQualifier>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>17.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.functionaljava</groupId>
+			<artifactId>functionaljava</artifactId>
+			<version>4.1</version>
+		</dependency>
+	</dependencies>
 
 	<build>
+		<sourceDirectory>src</sourceDirectory>
+
 		<plugins>
+			<!-- Use Java 7 -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<id>download-dependencies</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<target>
-								<ant antfile="dependencies.xml" />
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<!-- Generate MANIFEST.MF from project, to make project available to Eclipse
+				plugins. -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<manifestLocation>${manifest-location}</manifestLocation>
+
+					<instructions>
+						<!-- Fix names not to include the groupId. -->
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+
+						<Embed-Dependency>
+							guava,functionaljava
+						</Embed-Dependency>
+						<Export-Package>
+							!com.google.common.base.internal,com.google.common.*,
+							fj.*
+						</Export-Package>
+
+						<!-- Don't import sun.misc, cannot be found by Eclipse. -->
+						<Import-Package>
+							!sun.misc,
+							*
+						</Import-Package>
+
+						<!-- Replace SNAPSHOT in the manifest version with given qualifier. -->
+						<Bundle-Version>$(replace;${project.version};-SNAPSHOT;.${forceContextQualifier})</Bundle-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+
+			<!-- Make sure that the generated MANIFEST.MF is used in the resulting
+				JAR file. -->
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<archive>
+						<manifestFile>${manifest-location}/MANIFEST.MF</manifestFile>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
