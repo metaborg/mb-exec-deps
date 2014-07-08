@@ -25,6 +25,21 @@
 			<artifactId>functionaljava</artifactId>
 			<version>4.1</version>
 		</dependency>
+		<dependency>
+			<groupId>jline</groupId>
+			<artifactId>jline</artifactId>
+			<version>0.9.94</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ansell.jjtraveler</groupId>
+			<artifactId>jjtraveler</artifactId>
+			<version>0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ansell.aterms</groupId>
+			<artifactId>shared-objects</artifactId>
+			<version>1.4.9-p1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -57,11 +72,14 @@
 						<Bundle-Name>${project.artifactId}</Bundle-Name>
 
 						<Embed-Dependency>
-							guava,functionaljava
+							guava,functionaljava,jline,jjtraveler,shared-objects
 						</Embed-Dependency>
 						<Export-Package>
 							!com.google.common.base.internal,com.google.common.*,
-							fj.*
+							fj.*,
+							jline.*,
+							jjtraveler.*,
+							shared.*
 						</Export-Package>
 
 						<!-- Don't import sun.misc, cannot be found by Eclipse. -->
