@@ -14,6 +14,16 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.metaborg</groupId>
+			<artifactId>strategoxt-min-jar</artifactId>
+			<version>${metaborg-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.metaborg</groupId>
+			<artifactId>make-permissive-jar</artifactId>
+			<version>${metaborg-version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>${guava-version}</version>
@@ -69,10 +79,12 @@
 						<Bundle-Version>$(replace;${project.version};-SNAPSHOT;.${forceContextQualifier})</Bundle-Version>
 						<!-- Embed dependencies into plugin bundle, so they are exportable. -->
 						<Embed-Dependency>
-							guava,functionaljava,jline,jjtraveler,shared-objects
+							strategoxt-min-jar,make-permissive-jar,guava,functionaljava,jline,jjtraveler,shared-objects
 						</Embed-Dependency>
 						<!-- Export dependency packages -->
 						<Export-Package>
+							org.strategoxt.*,
+							org.strategoxt.permissivegrammars.*,
 							!com.google.common.base.internal,com.google.common.*,
 							fj.*,
 							jline.*,
