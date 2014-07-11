@@ -23,30 +23,26 @@
 			<artifactId>make-permissive-jar</artifactId>
 			<version>${metaborg-version}</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>${guava-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.functionaljava</groupId>
 			<artifactId>functionaljava</artifactId>
-			<version>${fj-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>jline</groupId>
 			<artifactId>jline</artifactId>
-			<version>${jline-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.ansell.jjtraveler</groupId>
 			<artifactId>jjtraveler</artifactId>
-			<version>${jjtraveler-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.ansell.aterms</groupId>
 			<artifactId>shared-objects</artifactId>
-			<version>${shared-objects-version}</version>
 		</dependency>
 	</dependencies>
 
@@ -55,22 +51,14 @@
 
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-version}</version>
-				<configuration>
-					<source>${java-version}</source>
-					<target>${java-version}</target>
-					<debug>true</debug>
-				</configuration>
 			</plugin>
 			<!-- Generate MANIFEST.MF from project, to make project available to Eclipse plugins. -->
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>${maven-bundle-version}</version>
-				<extensions>true</extensions>
 				<configuration>
-					<manifestLocation>${manifest-location}</manifestLocation>
 					<instructions>
 						<!-- Fix names not to include the groupId. -->
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
@@ -104,8 +92,8 @@
 			</plugin>
 			<!-- Add the generated MANIFEST.MF is used in the resulting JAR file. -->
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>${maven-jar-version}</version>
 				<configuration>
 					<archive>
 						<manifestFile>${manifest-location}/MANIFEST.MF</manifestFile>
