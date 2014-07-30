@@ -79,11 +79,8 @@
 							jjtraveler.*,
 							shared.*
 						</Export-Package>
-						<!-- Don't declare dependency on sun packages, they should be provided by the JVM. -->
+						<!-- Don't import any packages. -->
 						<Import-Package>
-							!sun.misc,
-							!sun.nio.cs,
-							*
 						</Import-Package>
 						<!-- Don't generate uses declarations in exported packages. -->
 						<_nouses>true</_nouses>
