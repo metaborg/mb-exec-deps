@@ -79,8 +79,13 @@
 							jjtraveler.*,
 							shared.*
 						</Export-Package>
-						<!-- Don't import any packages. -->
+						<!-- Don't declare dependency on sun packages, they should be provided by the JVM. -->
+						<!-- Don't declare dependency on non-existent package org.spoofax. -->
 						<Import-Package>
+							!sun.misc,
+							!sun.nio.cs,
+							!org.spoofax,
+							*
 						</Import-Package>
 						<!-- Don't generate uses declarations in exported packages. -->
 						<_nouses>true</_nouses>
