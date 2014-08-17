@@ -4,6 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>org.spoofax.interpreter.externaldeps</artifactId>
 	<packaging>bundle</packaging>
+	<description>Bundle to import non-Eclipse external dependencies into Eclipse</description>
+	<url>https://github.com/metaborg/mb-exec-deps</url>
 
 	<parent>
 		<groupId>org.metaborg</groupId>
@@ -104,4 +106,19 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<developers>
+		<developer>
+			<name>Gabriël Konat</name>
+			<email>g.d.p.konat@tudelft.nl</email>
+			<organization>Delft University of Technology</organization>
+			<organizationUrl>http://www.ewi.tudelft.nl/en</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:metaborg/mb-exec-deps.git</connection>
+		<developerConnection>scm:git:git@github.com:metaborg/mb-exec-deps.git</developerConnection>
+		<url>https://github.com/metaborg/mb-exec-deps</url>
+	</scm>
 </project>
