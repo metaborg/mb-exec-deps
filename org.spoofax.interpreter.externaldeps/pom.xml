@@ -46,6 +46,34 @@
 			<groupId>com.github.ansell.aterms</groupId>
 			<artifactId>shared-objects</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-vfs2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.netflix.rxjava</groupId>
+			<artifactId>rxjava-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-multibindings</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jcl</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -69,26 +97,55 @@
 						<Bundle-Version>$(replace;${project.version};-SNAPSHOT;.${forceContextQualifier})</Bundle-Version>
 						<!-- Embed dependencies into plugin bundle, so they are exportable. -->
 						<Embed-Dependency>
-							strategoxt-min-jar,make-permissive-jar,guava,functionaljava,jline,jjtraveler,shared-objects
+							strategoxt-min-jar,
+							make-permissive-jar,
+							guava,
+							functionaljava,
+							jline,
+							jjtraveler,
+							shared-objects,
+							commons-vfs2,
+							rxjava-core,
+							guice,
+							guice-multibindings,
+							log4j-core,
+							log4j-api,
+							log4j-jcl
 						</Embed-Dependency>
 						<!-- Export dependency packages -->
 						<Export-Package>
 							org.strategoxt.*,
 							org.strategoxt.permissivegrammars.*,
-							!com.google.common.base.internal,com.google.common.*,
+							!com.google.common.base.internal,
+							com.google.common.*,
+							!com.google.inject.internal.*,
+							com.google.inject.*,
+							org.apache.commons.vfs2*,
+							org.apache.logging.log4j,
+							org.apache.logging.log4j*,
 							fj.*,
 							jline.*,
 							jjtraveler.*,
-							shared.*
+							shared.*,
+							rx.*
 						</Export-Package>
-						<!-- Don't declare dependency on sun packages, they should be provided by the JVM. -->
-						<!-- Don't declare dependency on non-existent package org.spoofax. -->
+						<!-- Don't declare dependency on JDK, internal, or non-existent packages. -->
 						<Import-Package>
-							!sun.misc,
-							!sun.nio.cs,
+							!sun*,
+							!javax*,
 							!org.spoofax,
+							!com.fasterxml.jackson*,
+							!com.lmax.disruptor*,
+							!org.apache*,
+							!org.aopalliance*,
+							!com.google*,
 							*
 						</Import-Package>
+						<!-- <Import-Package>
+							org.strategoxt.lang,
+							org.strategoxt.lang.compat.stratego_rtg_compat,
+							org.strategoxt.lang.compat.strc_compat
+							</Import-Package> -->
 						<!-- Don't generate uses declarations in exported packages. -->
 						<_nouses>true</_nouses>
 					</instructions>
