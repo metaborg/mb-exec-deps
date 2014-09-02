@@ -50,6 +50,14 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-vfs2</artifactId>
 		</dependency>
+		<!-- This is a required dependency, but some Eclipse bundle already exports apache logging for some reason. We cannot export
+			it from here because it causes an ambiguity. -->
+		<!--
+			<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			</dependency>
+		-->
 		<dependency>
 			<groupId>com.netflix.rxjava</groupId>
 			<artifactId>rxjava-core</artifactId>
@@ -63,8 +71,22 @@
 			<artifactId>guice-multibindings</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
 			<artifactId>jsr305</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -105,9 +127,12 @@
 							jjtraveler,
 							shared-objects,
 							commons-vfs2,
+							commons-logging,
 							rxjava-core,
 							guice,
 							guice-multibindings,
+							javax.inject,
+							aopalliance,
 							log4j-core,
 							log4j-api,
 							log4j-jcl
@@ -120,9 +145,12 @@
 							com.google.common.*,
 							!com.google.inject.internal.*,
 							com.google.inject.*,
-							org.apache.commons.vfs2*,
+							javax.inject.*,
+							org.aopalliance.*,
+							org.apache.commons.vfs2,
+							org.apache.commons.vfs2.*,
 							org.apache.logging.log4j,
-							org.apache.logging.log4j*,
+							org.apache.logging.log4j.*,
 							fj.*,
 							jline.*,
 							jjtraveler.*,
