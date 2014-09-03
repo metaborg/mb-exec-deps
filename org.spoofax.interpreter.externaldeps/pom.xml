@@ -52,12 +52,10 @@
 		</dependency>
 		<!-- This is a required dependency, but some Eclipse bundle already exports apache logging for some reason. We cannot export
 			it from here because it causes an ambiguity. -->
-		<!--
-			<dependency>
+		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			</dependency>
-		-->
+		</dependency>
 		<dependency>
 			<groupId>com.netflix.rxjava</groupId>
 			<artifactId>rxjava-core</artifactId>
@@ -149,6 +147,9 @@
 							org.aopalliance.*,
 							org.apache.commons.vfs2,
 							org.apache.commons.vfs2.*,
+							!org.apache.commons.logging.impl,
+							org.apache.commons.logging,
+							org.apache.commons.logging.*,
 							org.apache.logging.log4j,
 							org.apache.logging.log4j.*,
 							fj.*,
