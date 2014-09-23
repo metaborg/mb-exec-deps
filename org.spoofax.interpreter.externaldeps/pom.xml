@@ -114,8 +114,8 @@
 						</Embed-Dependency>
 						<!-- Export dependency packages -->
 						<Export-Package>
-							org.strategoxt.*,
 							org.strategoxt.permissivegrammars.*,
+							org.strategoxt.*,
 							!com.google.common.base.internal,
 							com.google.common.*,
 							!com.google.inject.internal.*,
