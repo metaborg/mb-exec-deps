@@ -25,6 +25,13 @@
 			<artifactId>make-permissive-jar</artifactId>
 			<version>${metaborg-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.metaborg</groupId>
+			<artifactId>make-permissive-jar-installer</artifactId>
+			<version>${metaborg-version}</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
