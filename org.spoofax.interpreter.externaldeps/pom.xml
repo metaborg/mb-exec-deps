@@ -25,6 +25,13 @@
 			<artifactId>make-permissive-jar</artifactId>
 			<version>${metaborg-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.metaborg</groupId>
+			<artifactId>make-permissive-jar-installer</artifactId>
+			<version>${metaborg-version}</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -92,6 +99,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jcl</artifactId>
 		</dependency>
 	</dependencies>
@@ -137,8 +148,8 @@
 						</Embed-Dependency>
 						<!-- Export dependency packages -->
 						<Export-Package>
+							org.strategoxt.permissivegrammars,
 							org.strategoxt.*,
-							org.strategoxt.permissivegrammars.*,
 							!com.google.common.base.internal,
 							com.google.common.*,
 							!com.google.inject.internal.*,
