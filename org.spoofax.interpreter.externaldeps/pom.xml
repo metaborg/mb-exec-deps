@@ -85,6 +85,10 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jcl</artifactId>
 		</dependency>
+    <dependency>
+      <groupId>com.github.krukow</groupId>
+      <artifactId>clj-ds</artifactId>
+    </dependency>
 	</dependencies>
 
 	<build>
@@ -121,7 +125,8 @@
 							guice-multibindings,
 							log4j-core,
 							log4j-api,
-							log4j-jcl
+							log4j-jcl,
+							clj-ds
 						</Embed-Dependency>
 						<!-- Export dependency packages -->
 						<Export-Package>
@@ -138,7 +143,9 @@
 							jline.*,
 							jjtraveler.*,
 							shared.*,
-							rx.*
+							rx.*,
+							com.github.krukow.clj_ds,
+							com.github.krukow.clj_lang
 						</Export-Package>
 						<!-- Don't declare dependency on JDK, internal, or non-existent packages. -->
 						<Import-Package>
