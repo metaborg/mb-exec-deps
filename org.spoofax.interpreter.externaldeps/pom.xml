@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>org.spoofax.interpreter.externaldeps</artifactId>
-	<packaging>bundle</packaging>
-	<description>Bundle to import non-Eclipse external dependencies into Eclipse</description>
-	<url>https://github.com/metaborg/mb-exec-deps</url>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>org.spoofax.interpreter.externaldeps</artifactId>
+  <packaging>bundle</packaging>
+  <description>Bundle to import non-Eclipse external dependencies into Eclipse</description>
+  <url>https://github.com/metaborg/mb-exec-deps</url>
 
 	<parent>
 		<groupId>org.metaborg</groupId>
@@ -14,186 +17,190 @@
 		<relativePath>../../spoofax-deploy/org.metaborg.maven.parent</relativePath>
 	</parent>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.metaborg</groupId>
-			<artifactId>strategoxt-min-jar</artifactId>
-			<version>${metaborg-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.metaborg</groupId>
-			<artifactId>make-permissive-jar</artifactId>
-			<version>${metaborg-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.metaborg</groupId>
-			<artifactId>make-permissive-jar-installer</artifactId>
-			<version>${metaborg-version}</version>
-			<type>pom</type>
-			<scope>provided</scope>
-		</dependency>
+  <dependencies>
+    <dependency>
+      <groupId>org.metaborg</groupId>
+      <artifactId>strategoxt-min-jar</artifactId>
+      <version>${metaborg-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.metaborg</groupId>
+      <artifactId>make-permissive-jar</artifactId>
+      <version>${metaborg-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.metaborg</groupId>
+      <artifactId>make-permissive-jar-installer</artifactId>
+      <version>${metaborg-version}</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
 
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.functionaljava</groupId>
-			<artifactId>functionaljava</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>jline</groupId>
-			<artifactId>jline</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.ansell.jjtraveler</groupId>
-			<artifactId>jjtraveler</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.ansell.aterms</groupId>
-			<artifactId>shared-objects</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-vfs2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.netflix.rxjava</groupId>
-			<artifactId>rxjava-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.google.inject.extensions</groupId>
-			<artifactId>guice-multibindings</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.google.code.findbugs</groupId>
-			<artifactId>jsr305</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-jcl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.krukow</groupId>
-			<artifactId>clj-ds</artifactId>
-		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.functionaljava</groupId>
+      <artifactId>functionaljava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>jline</groupId>
+      <artifactId>jline</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ansell.jjtraveler</groupId>
+      <artifactId>jjtraveler</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ansell.aterms</groupId>
+      <artifactId>shared-objects</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-vfs2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.netflix.rxjava</groupId>
+      <artifactId>rxjava-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-multibindings</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-jcl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.krukow</groupId>
+      <artifactId>clj-ds</artifactId>
+    </dependency>
+  </dependencies>
 
-	<build>
-		<sourceDirectory>src</sourceDirectory>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
 
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			<!-- Generate MANIFEST.MF from project, to make project available to Eclipse plugins. -->
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<!-- Fix names not to include the groupId. -->
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Bundle-Name>${project.artifactId}</Bundle-Name>
-						<!-- Replace SNAPSHOT in the manifest version with given qualifier. -->
-						<Bundle-Version>$(replace;${project.version};-SNAPSHOT;.${forceContextQualifier})</Bundle-Version>
-						<!-- Embed dependencies into plugin bundle, so they are exportable. -->
-						<Embed-Dependency>
-							strategoxt-min-jar,
-							make-permissive-jar,
-							guava,
-							functionaljava,
-							jline,
-							jjtraveler,
-							shared-objects,
-							commons-vfs2,
-							rxjava-core,
-							guice,
-							guice-multibindings,
-							log4j-core,
-							log4j-api,
-							log4j-jcl,
-							clj-ds
-						</Embed-Dependency>
-						<!-- Export dependency packages -->
-						<Export-Package>
-							org.strategoxt.permissivegrammars,
-							org.strategoxt.*,
-							!com.google.common.base.internal,
-							com.google.common.*,
-							!com.google.inject.internal.*,
-							com.google.inject.*,
-							org.apache.commons.vfs2*,
-							org.apache.logging.log4j,
-							org.apache.logging.log4j*,
-							fj.*,
-							jline.*,
-							jjtraveler.*,
-							shared.*,
-							rx.*,
-							com.github.krukow.clj_ds,
-							com.github.krukow.clj_lang
-						</Export-Package>
-						<!-- Don't declare dependency on JDK, internal, or non-existent packages. -->
-						<Import-Package>
-							!sun*,
-							!javax*,
-							!org.spoofax,
-							!com.fasterxml.jackson*,
-							!com.lmax.disruptor*,
-							!org.apache*,
-							!org.aopalliance*,
-							!com.google*,
-							*
-						</Import-Package>
-						<!-- <Import-Package>
-							org.strategoxt.lang,
-							org.strategoxt.lang.compat.stratego_rtg_compat,
-							org.strategoxt.lang.compat.strc_compat
-							</Import-Package> -->
-						<!-- Don't generate uses declarations in exported packages. -->
-						<_nouses>true</_nouses>
-					</instructions>
-				</configuration>
-			</plugin>
-			<!-- Add the generated MANIFEST.MF is used in the resulting JAR file. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifestFile>${manifest-location}/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <!-- Generate MANIFEST.MF from project, to make project available to Eclipse plugins. -->
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+            <!-- Fix names not to include the groupId. -->
+            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+            <Bundle-Name>${project.artifactId}</Bundle-Name>
+            <!-- Replace SNAPSHOT in the manifest version with given qualifier. -->
+            <Bundle-Version>$(replace;${project.version};-SNAPSHOT;.${forceContextQualifier})</Bundle-Version>
+            <!-- Embed dependencies into plugin bundle, so they are exportable. -->
+            <Embed-Dependency>
+              strategoxt-min-jar,
+              make-permissive-jar,
+              guava,
+              functionaljava,
+              jline,
+              jjtraveler,
+              shared-objects,
+              commons-io,
+              commons-vfs2,
+              rxjava-core,
+              guice,
+              guice-multibindings,
+              log4j-core,
+              log4j-api,
+              log4j-jcl,
+              clj-ds
+            </Embed-Dependency>
+            <!-- Export dependency packages -->
+            <Export-Package>
+              org.strategoxt.permissivegrammars,
+              org.strategoxt.*,
+              !com.google.common.base.internal,
+              com.google.common.*,
+              !com.google.inject.internal.*,
+              com.google.inject.*,
+              org.apache.commons.vfs2*,
+              org.apache.commons.io,
+              org.apache.commons.io*,
+              org.apache.logging.log4j,
+              org.apache.logging.log4j*,
+              fj.*,
+              jline.*,
+              jjtraveler.*,
+              shared.*,
+              rx.*,
+              com.github.krukow.clj_ds,
+              com.github.krukow.clj_lang
+            </Export-Package>
+            <!-- Don't declare dependency on JDK, internal, or non-existent packages. -->
+            <Import-Package>
+              !sun*,
+              !javax*,
+              !org.spoofax,
+              !com.fasterxml.jackson*,
+              !com.lmax.disruptor*,
+              !org.apache*,
+              !org.aopalliance*,
+              !com.google*,
+              *
+            </Import-Package>
+            <!-- <Import-Package> org.strategoxt.lang, org.strategoxt.lang.compat.stratego_rtg_compat, org.strategoxt.lang.compat.strc_compat 
+              </Import-Package> -->
+            <!-- Don't generate uses declarations in exported packages. -->
+            <_nouses>true</_nouses>
+          </instructions>
+        </configuration>
+      </plugin>
+      <!-- Add the generated MANIFEST.MF is used in the resulting JAR file. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>${manifest-location}/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
-	<developers>
-		<developer>
-			<name>Gabriël Konat</name>
-			<email>g.d.p.konat@tudelft.nl</email>
-			<organization>Delft University of Technology</organization>
-			<organizationUrl>http://www.ewi.tudelft.nl/en</organizationUrl>
-		</developer>
-	</developers>
+  <developers>
+    <developer>
+      <name>Gabriël Konat</name>
+      <email>g.d.p.konat@tudelft.nl</email>
+      <organization>Delft University of Technology</organization>
+      <organizationUrl>http://www.ewi.tudelft.nl/en</organizationUrl>
+    </developer>
+  </developers>
 
-	<scm>
-		<connection>scm:git:git@github.com:metaborg/mb-exec-deps.git</connection>
-		<developerConnection>scm:git:git@github.com:metaborg/mb-exec-deps.git</developerConnection>
-		<url>https://github.com/metaborg/mb-exec-deps</url>
-	</scm>
+  <scm>
+    <connection>scm:git:git@github.com:metaborg/mb-exec-deps.git</connection>
+    <developerConnection>scm:git:git@github.com:metaborg/mb-exec-deps.git</developerConnection>
+    <url>https://github.com/metaborg/mb-exec-deps</url>
+  </scm>
 </project>
