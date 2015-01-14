@@ -18,6 +18,7 @@
   </parent>
 
   <dependencies>
+    <!-- Requirements for building/running languages -->
     <dependency>
       <groupId>org.metaborg</groupId>
       <artifactId>strategoxt-min-jar</artifactId>
@@ -35,19 +36,7 @@
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
-
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.functionaljava</groupId>
-      <artifactId>functionaljava</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>jline</groupId>
-      <artifactId>jline</artifactId>
-    </dependency>
+    <!-- Requirements for org.spoofax.aterm -->
     <dependency>
       <groupId>com.github.ansell.jjtraveler</groupId>
       <artifactId>jjtraveler</artifactId>
@@ -56,18 +45,18 @@
       <groupId>com.github.ansell.aterms</groupId>
       <artifactId>shared-objects</artifactId>
     </dependency>
+    <!-- Requirements for org.spoofax.interpreter.library.jline -->
     <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
+      <groupId>jline</groupId>
+      <artifactId>jline</artifactId>
     </dependency>
+    <!-- Requirements for org.metaborg.meta.interpreter.framework -->
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-vfs2</artifactId>
+      <groupId>com.github.krukow</groupId>
+      <artifactId>clj-ds</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.netflix.rxjava</groupId>
-      <artifactId>rxjava-core</artifactId>
-    </dependency>
+    <!-- General requirements for several libraries -->
+    <!-- Guice and dependencies -->
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
@@ -81,6 +70,20 @@
       <artifactId>jsr305</artifactId>
     </dependency>
     <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>aopalliance</groupId>
+      <artifactId>aopalliance</artifactId>
+    </dependency>
+    <!-- Google Guava -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <!-- Apache logging -->
+    <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
     </dependency>
@@ -92,10 +95,26 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-jcl</artifactId>
     </dependency>
+    <!-- Apache Commons logging -->
     <dependency>
-      <groupId>com.github.krukow</groupId>
-      <artifactId>clj-ds</artifactId>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
     </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging-api</artifactId>
+    </dependency>
+    <!-- Apache Commons IO -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <!-- Apache Commons VFS -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-vfs2</artifactId>
+    </dependency>
+    <!-- Kryo and dependencies -->
     <dependency>
       <groupId>com.esotericsoftware</groupId>
       <artifactId>kryo</artifactId>
@@ -103,22 +122,28 @@
     <dependency>
       <groupId>com.esotericsoftware</groupId>
       <artifactId>reflectasm</artifactId>
-      <version>1.10.0</version>
     </dependency>
     <dependency>
       <groupId>com.esotericsoftware</groupId>
       <artifactId>minlog</artifactId>
-      <version>1.3.0</version>
     </dependency>
     <dependency>
       <groupId>org.objenesis</groupId>
       <artifactId>objenesis</artifactId>
-      <version>2.1</version>
     </dependency>
     <dependency>
       <groupId>org.ow2.asm</groupId>
       <artifactId>asm</artifactId>
-      <version>4.2</version>
+    </dependency>
+    <!-- Netflix Reactive Extensions for Java -->
+    <dependency>
+      <groupId>com.netflix.rxjava</groupId>
+      <artifactId>rxjava-core</artifactId>
+    </dependency>
+    <!-- Functional Java -->
+    <dependency>
+      <groupId>org.functionaljava</groupId>
+      <artifactId>functionaljava</artifactId>
     </dependency>
   </dependencies>
 
@@ -143,69 +168,77 @@
             <Bundle-Version>$(replace;${project.version};-SNAPSHOT;.${forceContextQualifier})</Bundle-Version>
             <!-- Embed dependencies into plugin bundle, so they are exportable. -->
             <Embed-Dependency>
-              strategoxt-min-jar,
-              make-permissive-jar,
-              guava,
-              functionaljava,
-              jline,
-              jjtraveler,
-              shared-objects,
+              aopalliance,
+              asm,
+              clj-ds,
               commons-io,
+              commons-logging,
+              commons-logging-api,
               commons-vfs2,
-              rxjava-core,
+              functionaljava,
+              guava,
               guice,
               guice-multibindings,
-              log4j-core,
-              log4j-api,
-              log4j-jcl,
-              clj-ds,
+              javax.inject,
+              jjtraveler,
+              jline,
               kryo,
-              reflectasm,
-              asm,
+              log4j-api,
+              log4j-core,
+              log4j-jcl,
+              make-permissive-jar,
               minlog,
-              objenesis
+              objenesis,
+              reflectasm,
+              rxjava-core,
+              shared-objects,
+              strategoxt-min-jar
             </Embed-Dependency>
             <!-- Export dependency packages -->
             <Export-Package>
-              org.strategoxt.permissivegrammars,
-              org.strategoxt.*,
               !com.google.common.base.internal,
-              com.google.common.*,
               !com.google.inject.internal.*,
-              com.google.inject.*,
-              org.apache.commons.vfs2*,
-              org.apache.commons.io,
-              org.apache.commons.io*,
-              org.apache.logging.log4j,
-              org.apache.logging.log4j*,
-              fj.*,
-              jline.*,
-              jjtraveler.*,
-              shared.*,
-              rx.*,
+              !org.apache.commons.logging.impl,
+              com.esotericsoftware.kryo*,
+              com.esotericsoftware.kryo,
+              com.esotericsoftware.minlog*,
+              com.esotericsoftware.minlog,
+              com.esotericsoftware.reflectasm*,
+              com.esotericsoftware.reflectasm,
               com.github.krukow.clj_ds,
               com.github.krukow.clj_lang,
-              com.esotericsoftware.kryo,
-              com.esotericsoftware.kryo*,
-              com.esotericsoftware.minlog,
-              com.esotericsoftware.minlog*,
-              com.esotericsoftware.reflectasm,
-              com.esotericsoftware.reflectasm*,
-              org.objectweb.asm,
+              com.google.common.*,
+              com.google.inject.*,
+              fj.*,
+              javax.inject,
+              jjtraveler.*,
+              jline.*,
+              org.aopalliance*,
+              org.apache.commons.io*,
+              org.apache.commons.io,
+              org.apache.commons.vfs2*,
+              org.apache.commons.logging,
+              org.apache.logging.log4j*,
+              org.apache.logging.log4j,
               org.objectweb.asm*,
+              org.objectweb.asm,
+              org.objenesis*,
               org.objenesis,
-              org.objenesis*
+              org.strategoxt.*,
+              org.strategoxt.permissivegrammars,
+              rx.*,
+              shared.*
             </Export-Package>
             <!-- Don't declare dependency on JDK, internal, or non-existent packages. -->
             <Import-Package>
-              !sun*,
-              !javax*,
-              !org.spoofax,
               !com.fasterxml.jackson*,
-              !com.lmax.disruptor*,
-              !org.apache*,
-              !org.aopalliance*,
               !com.google*,
+              !com.lmax.disruptor*,
+              !javax*,
+              !org.aopalliance*,
+              !org.apache*,
+              !org.spoofax,
+              !sun*,
               *
             </Import-Package>
             <!-- <Import-Package> org.strategoxt.lang, org.strategoxt.lang.compat.stratego_rtg_compat, org.strategoxt.lang.compat.strc_compat 
