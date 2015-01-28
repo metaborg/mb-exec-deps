@@ -114,6 +114,11 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-vfs2</artifactId>
     </dependency>
+    <!-- Apache Commons lang -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
     <!-- Kryo and dependencies -->
     <dependency>
       <groupId>com.esotericsoftware</groupId>
@@ -172,6 +177,7 @@
               asm,
               clj-ds,
               commons-io,
+              commons-lang3,
               commons-logging,
               commons-logging-api,
               commons-vfs2,
@@ -217,6 +223,8 @@
               org.apache.commons.io*,
               org.apache.commons.io,
               org.apache.commons.vfs2*,
+              org.apache.commons.lang3,
+              org.apache.commons.lang3*,
               org.apache.commons.logging,
               org.apache.logging.log4j*,
               org.apache.logging.log4j,
