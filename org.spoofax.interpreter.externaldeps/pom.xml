@@ -56,6 +56,19 @@
       <artifactId>clj-ds</artifactId>
     </dependency>
     <!-- General requirements for several libraries -->
+    <!-- Logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
     <!-- Guice and dependencies -->
     <dependency>
       <groupId>com.google.inject</groupId>
@@ -82,28 +95,6 @@
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
-    <!-- Apache logging -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-jcl</artifactId>
-    </dependency>
-    <!-- Apache Commons logging -->
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging-api</artifactId>
-    </dependency>
     <!-- Apache Commons IO -->
     <dependency>
       <groupId>commons-io</groupId>
@@ -118,6 +109,12 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <!-- Apache Commons logging, dependency for many apache commons libraries -->
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.2</version>
     </dependency>
     <!-- Kryo and dependencies -->
     <dependency>
@@ -179,7 +176,6 @@
               commons-io,
               commons-lang3,
               commons-logging,
-              commons-logging-api,
               commons-vfs2,
               functionaljava,
               guava,
@@ -189,15 +185,15 @@
               jjtraveler,
               jline,
               kryo,
-              log4j-api,
-              log4j-core,
-              log4j-jcl,
+              logback-classic,
+              logback-core,
               make-permissive-jar,
               minlog,
               objenesis,
               reflectasm,
               rxjava-core,
               shared-objects,
+              slf4j-api,
               strategoxt-min-jar
             </Embed-Dependency>
             <!-- Export dependency packages -->
@@ -205,6 +201,10 @@
               !com.google.common.base.internal,
               !com.google.inject.internal.*,
               !org.apache.commons.logging.impl,
+              ch.qos.logback.classic*,
+              ch.qos.logback.classic,
+              ch.qos.logback.core*,
+              ch.qos.logback.core,
               com.esotericsoftware.kryo*,
               com.esotericsoftware.kryo,
               com.esotericsoftware.minlog*,
@@ -222,16 +222,16 @@
               org.aopalliance*,
               org.apache.commons.io*,
               org.apache.commons.io,
-              org.apache.commons.vfs2*,
-              org.apache.commons.lang3,
               org.apache.commons.lang3*,
+              org.apache.commons.lang3,
               org.apache.commons.logging,
-              org.apache.logging.log4j*,
-              org.apache.logging.log4j,
+              org.apache.commons.vfs2*,
               org.objectweb.asm*,
               org.objectweb.asm,
               org.objenesis*,
               org.objenesis,
+              org.slf4j*,
+              org.slf4j,
               org.strategoxt.*,
               org.strategoxt.permissivegrammars,
               rx.*,
@@ -242,9 +242,13 @@
               !com.fasterxml.jackson*,
               !com.google*,
               !com.lmax.disruptor*,
+              !groovy.lang,
               !javax*,
               !org.aopalliance*,
               !org.apache*,
+              !org.codehaus.groovy*,
+              !org.codehaus.janino,
+              !org.codehaus.commons.compiler,
               !org.spoofax,
               !sun*,
               *
