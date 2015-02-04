@@ -253,10 +253,11 @@
               !sun*,
               *
             </Import-Package>
-            <!-- <Import-Package> org.strategoxt.lang, org.strategoxt.lang.compat.stratego_rtg_compat, org.strategoxt.lang.compat.strc_compat 
-              </Import-Package> -->
             <!-- Don't generate uses declarations in exported packages. -->
             <_nouses>true</_nouses>
+            <!-- Allow buddy class loading, so that other bundles can merge their classpath with this bundle, which 
+              some libraries require. -->
+            <Eclipse-BuddyPolicy>registered</Eclipse-BuddyPolicy>
           </instructions>
         </configuration>
       </plugin>
