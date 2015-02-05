@@ -69,6 +69,10 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+    </dependency>
     <!-- Guice and dependencies -->
     <dependency>
       <groupId>com.google.inject</groupId>
@@ -183,6 +187,7 @@
               guice-multibindings,
               javax.inject,
               jjtraveler,
+              jcl-over-slf4j,
               jline,
               kryo,
               logback-classic,
