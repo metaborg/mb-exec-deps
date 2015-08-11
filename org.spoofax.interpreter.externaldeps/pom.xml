@@ -147,6 +147,27 @@
       <groupId>org.functionaljava</groupId>
       <artifactId>functionaljava</artifactId>
     </dependency>
+    <!-- Pluto -->
+    <dependency>
+      <groupId>build.pluto</groupId>
+      <artifactId>pluto</artifactId>
+      <version>1.4.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.sugarj</groupId>
+      <artifactId>common</artifactId>
+      <version>1.5.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-cli</groupId>
+    	<artifactId>commons-cli</artifactId>
+    	<version>1.2</version>
+    </dependency>
+    <dependency>
+   	  <groupId>com.cedarsoftware</groupId>
+      <artifactId>java-util-pluto-bugfix</artifactId>
+      <version>1.19.4-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -173,7 +194,9 @@
               aopalliance,
               asm,
               clj-ds,
+              common,
               commons-io,
+              commons-cli,
               commons-lang3,
               commons-logging,
               commons-vfs2,
@@ -181,6 +204,7 @@
               guava,
               guice,
               guice-multibindings,
+              java-util-pluto-bugfix,
               jjtraveler,
               jcl-over-slf4j,
               jline,
@@ -190,6 +214,7 @@
               make-permissive-jar,
               minlog,
               objenesis,
+              pluto,
               reflectasm,
               rxjava-core,
               shared-objects,
@@ -201,6 +226,8 @@
               !com.google.common.base.internal,
               !com.google.inject.internal.*,
               !org.apache.commons.logging.impl,
+              build.pluto*,
+              build.pluto,
               ch.qos.logback.classic*,
               ch.qos.logback.classic,
               ch.qos.logback.core*,
@@ -211,6 +238,7 @@
               com.esotericsoftware.minlog,
               com.esotericsoftware.reflectasm*,
               com.esotericsoftware.reflectasm,
+              com.cedarsoftware.util,
               com.github.krukow.clj_ds,
               com.github.krukow.clj_lang,
               com.google.common.*,
@@ -221,6 +249,7 @@
               org.aopalliance*,
               org.apache.commons.io*,
               org.apache.commons.io,
+              org.apache.commons.cli,
               org.apache.commons.lang3*,
               org.apache.commons.lang3,
               org.apache.commons.logging,
@@ -229,6 +258,8 @@
               org.objectweb.asm,
               org.objenesis*,
               org.objenesis,
+              org.sugarj.common*,
+              org.sugarj.common,
               org.slf4j*,
               org.slf4j,
               org.strategoxt.*,
