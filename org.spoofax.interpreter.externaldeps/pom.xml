@@ -17,6 +17,19 @@
     <relativePath>../../spoofax-deploy/org.metaborg.maven.parent</relativePath>
   </parent>
 
+  <repositories>
+  		<repository>
+  			<id>pluto-build</id>
+  			<url>https://raw.githubusercontent.com/pluto-build/pluto-build.github.io/master/mvnrepository/</url>
+  			<releases>
+  				<enabled>false</enabled>
+  			</releases>
+  			<snapshots>
+  				<enabled>true</enabled>
+  			</snapshots>
+  		</repository>
+  	</repositories>
+
   <dependencies>
     <!-- Requirements for building/running languages -->
     <dependency>
